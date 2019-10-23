@@ -9,12 +9,16 @@
 
 > 等了挺长时间的。
 
+补充：服务器安装（以 Ubuntu 为例）：`apt-get install lrzsz`
+
+
+
 2.在本地/usr/local/bin/目录下保存iterm2-send-zmodem.sh 和iterm2-recv-zmodem.sh两个脚本
 
-3.设置一下两个脚本的权限，一般 chmod 777 就行了
+3.设置一下两个脚本的权限，给予可执行权限
 
 ```bash
-chmod 777 /usr/local/bin/iterm2-*
+chmod a+x /usr/local/bin/iterm2-*
 ```
 
 4.设置Iterm2的Tirgger特性，profiles->default->editProfiles->Advanced中的Tirgger
@@ -34,4 +38,14 @@ chmod 777 /usr/local/bin/iterm2-*
         Instant: checked
 ```
 
-![如图](https://github.com/aikuyun/iterm2-zmodem/blob/master/imgs/01.png)
+![如图](https://github.com/powersee/iterm2-zmodem/blob/master/imgs/01.png)
+
+完成之后，用 ssh 连接服务器后，输入 `rz` 就会跳出一个窗口让我们选择文件传入到服务器里。
+而想要把文件从服务器下载到电脑，可以用 `sz filename`
+
+```
+➜  ~ sz test.txt
+**B00000000000000
+➜  ~
+➜  ~ # Sent -> /Users/name/Documents/
+```
